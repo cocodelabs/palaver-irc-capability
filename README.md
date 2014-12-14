@@ -13,3 +13,9 @@ Outside of this specification, Palaver also supports the following capabilities:
 - [server-time](http://ircv3.atheme.org/extensions/server-time-3.2)
 - [sasl](http://ircv3.atheme.org/extensions/sasl-3.1)
 - [multi-prefix](http://ircv3.atheme.org/extensions/multi-prefix-3.1)
+
+### Implementations
+
+#### ZNC
+
+There is a [module](https://github.com/cocodelabs/znc-palaver) for ZNC (an IRC bouncer) providing support for the palaverapp.com capability.
