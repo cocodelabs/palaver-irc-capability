@@ -101,7 +101,7 @@ Push notifications should be sent to the client using the `PUSH-ENDPOINT` when
 a mention happens. The following rules should be used to determine if a push
 notification should be sent:
 
-- The message contains any occurance `MENTION-KEYWORD` matching should be
+- The message contains any occurrence `MENTION-KEYWORD` matching should be
   done using a case-sensitive comparison using word-boundaries.
 - The message is sent to a channel in `MENTION-CHANNEL`.
 - The message is sent by a nick in `MENTION-NICK`.
@@ -112,7 +112,7 @@ After a message has been matched, it should then be check against the ignore
 list. If it matches any of the following criteria, a push notification should
 not be sent to the client.
 
-- The message contains a any occurance of an `IGNORE-KEYWORD` matching should be
+- The message contains a any occurrence of an `IGNORE-KEYWORD` matching should be
   done using a case-sensitive comparison using word-boundaries.
 - The message is sent to a channel in `IGNORE-CHANNEL`.
 - The message is sent from a nick in `IGNORE-NICK`.
