@@ -28,7 +28,7 @@ PALAVER BACKGROUND
 
 ### `FOREGROUND`
 
-When the Palaver client goes into the background, this command will be emitted.
+When the Palaver client comes back into the foreground from the background, this command will be emitted.
 
 ```
 PALAVER FOREGROUND
@@ -102,7 +102,7 @@ a mention happens. The following rules should be used to determine if a push
 notification should be sent:
 
 - The message contains any occurrence `MENTION-KEYWORD` matching should be
-  done using a case-sensitive comparison using word-boundaries.
+  done using a case-insensitive comparison using word-boundaries.
 - The message is sent to a channel in `MENTION-CHANNEL`.
 - The message is sent by a nick in `MENTION-NICK`.
 
@@ -113,7 +113,7 @@ list. If it matches any of the following criteria, a push notification should
 not be sent to the client.
 
 - The message contains a any occurrence of an `IGNORE-KEYWORD` matching should be
-  done using a case-sensitive comparison using word-boundaries.
+  done using a case-insensitive comparison using word-boundaries.
 - The message is sent to a channel in `IGNORE-CHANNEL`.
 - The message is sent from a nick in `IGNORE-NICK`.
 
@@ -126,12 +126,13 @@ If the URL is set to `https://api.palaverapp.com/1/push`, the request should
 look something like:
 
 ```
-GET /1/push HTTP/1.1
+POST /1/push HTTP/1.1
 Host: api.palaverapp.com
 Authorization: Bearer <client-token>
 Content-Type: application/json
-Accepts: application/json
+```
 
+```javascript
 {
     "badge": 4,
     "message": "Hello Kyle!",
@@ -146,12 +147,13 @@ message on another device. You can reset it's notifications and badge count
 using:
 
 ```
-GET /1/push HTTP/1.1
+POST /1/push HTTP/1.1
 Host: api.palaverapp.com
 Authorization: Bearer <client-token>
 Content-Type: application/json
-Accepts: application/json
+```
 
+```javascript
 {
     "badge": 0
 }
