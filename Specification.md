@@ -76,7 +76,9 @@ PALAVER END
 The `SET` command is used to set a key-value property. The following properties
 may be sent:
 
-- `PUSH-ENDPOINT`
+- `PUSH-ENDPOINT` (string)
+- `SHOW-MESSAGE-PREVIEW` (either `true` or `false`)
+    - Default: true
 
 #### `ADD <key> <value>`
 
@@ -156,5 +158,18 @@ Content-Type: application/json
 ```javascript
 {
     "badge": 0
+}
+```
+
+If `SHOW-MESSAGE-PREVIEW` is set to false, then the message should not be sent
+to the server. Instead `private` should be set to `true`:
+
+```javascript
+{
+    "badge": 4,
+    "private": true,
+    "sender": "Dennis",
+    "channel": "#palaver",
+    "network": "b758eaab1a4611a310642a6e8419fbff"
 }
 ```
