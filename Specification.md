@@ -1,6 +1,6 @@
 # Palaver Capability
 
-Copyright (c) 2012-2014 Cocode <support@cocode.org>.
+Copyright (c) 2012-2019 Cocode <support@cocode.org>.
 
 Unlimited redistribution and modification of this document is allowed
 provided that the above copyright notice and this permission notice
@@ -65,6 +65,7 @@ behind.
 
 ```
 PALAVER BEGIN <client-token> <client-preference-version>
+PALAVER SET PUSH-TOKEN 605b64f5addc408fcfa7ff0685e2d065fdecb127
 PALAVER SET PUSH-ENDPOINT https://api.palaverapp.com/1/push
 PALAVER ADD MENTION-KEYWORD cocode
 PALAVER ADD MENTION-KEYWORD {nick}
@@ -76,6 +77,7 @@ PALAVER END
 The `SET` command is used to set a key-value property. The following properties
 may be sent:
 
+- `PUSH-TOKEN` (string)
 - `PUSH-ENDPOINT` (string)
 - `SHOW-MESSAGE-PREVIEW` (either `true` or `false`)
     - Default: true
@@ -130,7 +132,7 @@ look something like:
 ```
 POST /1/push HTTP/1.1
 Host: api.palaverapp.com
-Authorization: Bearer <client-token>
+Authorization: Bearer <PUSH-TOKEN>
 Content-Type: application/json
 ```
 
@@ -151,7 +153,7 @@ using:
 ```
 POST /1/push HTTP/1.1
 Host: api.palaverapp.com
-Authorization: Bearer <client-token>
+Authorization: Bearer <PUSH-TOKEN>
 Content-Type: application/json
 ```
 
