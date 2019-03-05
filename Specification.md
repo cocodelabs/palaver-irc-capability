@@ -1,6 +1,6 @@
 # Palaver Capability
 
-Copyright (c) 2012-2014 Cocode <support@cocode.org>.
+Copyright (c) 2012-2019 Cocode <support@cocode.org>.
 
 Unlimited redistribution and modification of this document is allowed
 provided that the above copyright notice and this permission notice
